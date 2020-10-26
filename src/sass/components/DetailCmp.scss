@@ -1,0 +1,41 @@
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-gray-light-1);
+  border-bottom: var(--line);
+ 
+  // justify-content: space-between;
+}
+
+.description {
+  font-size: 1.4rem;
+  flex: 0 0 60%;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  margin-right: 4.5rem;
+  padding: 4rem;
+}
+
+.user-reviews {
+  background-color: yellowgreen;
+  flex:1
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex:0 0 50%;
+    margin-bottom: .7rem ;
+  }
+}

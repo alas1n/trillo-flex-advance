@@ -8,6 +8,7 @@ import UserNavigationCmp from '../components/UserNavigationCmp';
 import SidebarNavigationCmp from '../components/SidebarNavigationCmp';
 import GalleryCmp from '../components/GalleryCmp';
 import OverviewCmp from '../components/OverviewCmp';
+import DetailCmp from '../components/DetailCmp';
 
 function Page() {
   return (
@@ -27,6 +28,7 @@ function Page() {
         <main className="hotel-view">
           <GalleryCmp />
           <OverviewCmp />
+          <DetailCmp />
         </main>
       </div>
     </div>
