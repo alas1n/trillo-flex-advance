@@ -33,10 +33,10 @@ const DetailCmp = () => {
             Lucy and 3 other friends recommend this hotel.
           </p>
           <div className="recommend__friends">
-            <img src={ImgFriend1} alt="Friend 1" className="recommend_photo" />
-            <img src={ImgFriend2} alt="Firend 2" className="recommend_photo" />
-            <img src={ImgFriend3} alt="Firend 3" className="recommend_photo" />
-            <img src={ImgFriend4} alt="Firend 4" className="recommend_photo" />
+            <img src={ImgFriend1} alt="Friend 1" className="recommend__photo" />
+            <img src={ImgFriend2} alt="Firend 2" className="recommend__photo" />
+            <img src={ImgFriend3} alt="Firend 3" className="recommend__photo" />
+            <img src={ImgFriend4} alt="Firend 4" className="recommend__photo" />
           </div>
         </div>
       </div>
