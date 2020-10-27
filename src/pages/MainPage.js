@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../sass/pages/MainPage.scss';
 
+// COMPONENTS
 import LogoCmp from './../components/LogoCmp';
 import SearchFiledCmp from './../components/SearchFiledCmp';
 import UserNavigationCmp from '../components/UserNavigationCmp';
@@ -9,6 +10,7 @@ import SidebarNavigationCmp from '../components/SidebarNavigationCmp';
 import GalleryCmp from '../components/GalleryCmp';
 import OverviewCmp from '../components/OverviewCmp';
 import DetailCmp from '../components/DetailCmp';
+import CtaCmp from './../components/CtaCmp';
 
 function Page() {
   return (
@@ -29,6 +31,7 @@ function Page() {
           <GalleryCmp />
           <OverviewCmp />
           <DetailCmp />
+          <CtaCmp />
         </main>
       </div>
     </div>
