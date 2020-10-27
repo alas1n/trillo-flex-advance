@@ -10,6 +10,7 @@ import ImgUserReview2 from '../assets/user-2.jpg';
 
 // COMPONENTS
 import UserReviewsCmp from './../components/UserReviewsCmp';
+import InlineButtonCmp from './../components/InlineButtonCmp';
 
 const DetailCmp = () => {
   return (
@@ -60,6 +61,7 @@ const DetailCmp = () => {
           rate="9.3"
           photo={ImgUserReview2}
         />
+        <InlineButtonCmp buttonName="Show all" span="&rarr;" />
       </div>
     </div>
   );
