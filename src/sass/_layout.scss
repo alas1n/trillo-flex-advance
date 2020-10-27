@@ -3,7 +3,13 @@
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: ver(--shadow-dark);
-  min-height: 50rem
+  min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .header {
@@ -15,10 +21,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    height: 11rem;
+    justify-content: space-between;
+    
+  } 
+  
 }
 
 .content {
  display: flex;
+
+ @media only screen and (max-width: $bp-medium) {
+   flex-direction: column;
+}
+
 }
 
 .sidebar {
@@ -36,6 +55,10 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+ }
 }
 
 .hotel-view {

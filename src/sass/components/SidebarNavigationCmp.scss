@@ -3,13 +3,25 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+ }
+
 
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+     }
     }
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
+   }
   }
 
   &__item::before {
@@ -49,6 +61,15 @@
 
     display: flex;
     align-items: center;
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+   }
+
+   @media only screen and (max-width: $bp-small) {
+     flex-direction: column;
+     padding: 1rem;
+  }
   }
 
   &__icon {
@@ -56,5 +77,9 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+    @media only screen and (max-width: $bp-small) {
+      margin: 0;
+      margin-bottom: 5px;
+    }
   }
 }
