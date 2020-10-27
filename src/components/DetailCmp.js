@@ -5,6 +5,11 @@ import ImgFriend1 from '../assets/user-3.jpg';
 import ImgFriend2 from '../assets/user-4.jpg';
 import ImgFriend3 from '../assets/user-5.jpg';
 import ImgFriend4 from '../assets/user-6.jpg';
+import ImgUserReview1 from '../assets/user-1.jpg';
+import ImgUserReview2 from '../assets/user-2.jpg';
+
+// COMPONENTS
+import UserReviewsCmp from './../components/UserReviewsCmp';
 
 const DetailCmp = () => {
   return (
@@ -40,7 +45,22 @@ const DetailCmp = () => {
           </div>
         </div>
       </div>
-      <div className="user-reviews">user-reviews</div>
+      <div className="user-reviews">
+        <UserReviewsCmp
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex."
+          userName="Adam Smith"
+          date="Feb 25rd, 2019"
+          rate="7.8"
+          photo={ImgUserReview1}
+        />
+        <UserReviewsCmp
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi."
+          userName="Lady bug"
+          date="Oct 25rd, 220"
+          rate="9.3"
+          photo={ImgUserReview2}
+        />
+      </div>
     </div>
   );
 };
