@@ -1,11 +1,7 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import './sass/main.scss';
-import MainPage from './pages/MainPage';
-import MammadsPage from './pages/mamandsPages'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./sass/main.scss";
+import MainPage from "./pages/MainPage";
+import HotelsListPage from "./pages/HotelsListPage";
 
 const Routes = () => {
   return (
@@ -16,7 +12,7 @@ const Routes = () => {
             <MainPage />
           </Route>
           <Route path="/mamdsPage">
-            <MammadsPage />
+            <HotelsListPage />
           </Route>
           {/* <Route path="/">
             <Home />
@@ -25,6 +21,6 @@ const Routes = () => {
       </Router>
     </div>
   );
-}
+};
 
 export default Routes;
