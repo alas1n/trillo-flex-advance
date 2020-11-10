@@ -9,28 +9,22 @@ class MamadsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            addr: "string",
-            name: "string",
-            pics: null
+            hotels : [null]
         };
+            // addr: "string",
+            // name: "string",
+            // pics: null
       }
 
       getHotelData = async () => {
         console.log("clickd")
-        const response = await API.get('/hotel');
-        // console.log(response);
-        // console.log("response.data");
-        // console.log(response.data);
-
-        this.setState(function(state, props){
+        const response = await API.get('/hotels_list');
+        this.setState((state, props)=>{
             return {
-                ...response.data.data
+                hotels : response.data.data
             }
-            
         })
-
         console.log(this.state)
-        
       }
 
     render(){
@@ -40,12 +34,12 @@ class MamadsPage extends Component {
                 <button onClick={
                 this.getHotelData
                 }> click here</button>
-                <p>hotel name:</p>
+                {/* <p>hotel name:</p>
                 <p>{this.state.name}</p>
                 <p>hotel address:</p>
                 <p>{this.state.addr}</p>
                 <p>number of pics:</p>
-                <p>{this.state.pics}</p>
+                <p>{this.state.pics}</p> */}
             </div>
         )
     }
