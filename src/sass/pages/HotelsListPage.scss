@@ -1,0 +1,28 @@
+.hotel-list-page-container {
+  //   background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.hotel-list-page_content {
+  display: flex;
+  position: relative;
+  //   background-color: red;
+  overflow: hidden;
+}
+
+.hotels-list-view {
+  width: 35%;
+  //   background-color: royalblue;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.google-maps-wrapper {
+  width: 65%;
+  background-color: saddlebrown;
+}
