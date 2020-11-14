@@ -27,8 +27,9 @@ class HotelsListPage extends Component {
   }
 
   getHotelData = async () => {
-    console.log("clickd");
     const response = await API.get("/hotels_list");
+    // const responsejosn = JSON.stringify(response);
+    // console.log(responsejosn);
     this.setState((state, props) => {
       return {
         hotels: response.data.data,
@@ -61,6 +62,7 @@ class HotelsListPage extends Component {
               const htl = { ...hotel };
               return (
                 <HotelCmp
+                  key={String(htl.pk)}
                   hotelName={htl.name}
                   hotelRating={htl.rate}
                   hotelAdress={htl.addr}
