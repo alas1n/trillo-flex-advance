@@ -2,12 +2,12 @@
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem;
+  height: 100vh;
 
   @media only screen and (max-width: $bp-medium) {
     display: flex;
     margin: 0;
- }
-
+  }
 
   &__item {
     position: relative;
@@ -16,29 +16,28 @@
       margin-bottom: 0.5rem;
       @media only screen and (max-width: $bp-medium) {
         margin-bottom: 0;
-     }
+      }
     }
 
     @media only screen and (max-width: $bp-medium) {
       flex: 1;
-   }
+    }
   }
 
   &__item::before {
     // z-index: -1;
     content: "";
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 3px;
     background-color: var(--color-primary);
     transform: scaleY(0);
-    transition: transform .2s,
-                width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
-                background-color 0.1s;
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
   }
- 
+
   &__item:hover::before,
   &__item--active::before {
     transform: scaleY(1);
@@ -49,7 +48,7 @@
     background-color: var(--color-primary-light);
   }
 
-  &__link:link, 
+  &__link:link,
   &__link:visited {
     color: var(--color-grey-light-1);
     text-decoration: none;
@@ -64,12 +63,12 @@
     @media only screen and (max-width: $bp-medium) {
       justify-content: center;
       padding: 2rem;
-   }
+    }
 
-   @media only screen and (max-width: $bp-small) {
-     flex-direction: column;
-     padding: 1rem;
-  }
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1rem;
+    }
   }
 
   &__icon {
