@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 // components
-import Icons from './Icons';
+import Icons from "./Icons";
 
 const ListItems = ({ iconName, ItemName, activeState }) => {
   return (
