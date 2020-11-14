@@ -11,7 +11,7 @@ const Routes = () => {
           <Route path="/mainpage">
             <MainPage />
           </Route>
-          <Route path="/mamdsPage">
+          <Route path="/hotelslist">
             <HotelsListPage />
           </Route>
           {/* <Route path="/">
