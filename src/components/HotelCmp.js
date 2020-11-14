@@ -4,10 +4,12 @@ import React from "react";
 import hotelImage from "./../assets/SampleHotel.jpg";
 
 const HotelCmp = (props) => {
-  const hotelImp = props.img == "" ? hotelImage : props.img;
+  const image = props.img;
+  console.log(typeof image);
+  const hotelImp = props.img === "" ? hotelImage : props.img;
   return (
     <div className="HotelCmp">
-      <img src={hotelImp} alt="image" className="HotelCmp_img" />
+      <img src={hotelImp} alt="" className="HotelCmp_img" />
       <div className="HotelCmp-detail">
         <div className="HotelCmp-detail_name-rate">
           <p className="HotelCmp-detail_name-rate--name">{props.hotelName}</p>
