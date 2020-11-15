@@ -36,16 +36,29 @@
     &_name-rate {
       display: flex;
       justify-content: space-between;
-      //   background-color: red;
+      // background-color: red;
       margin-bottom: 2rem;
+      align-items: center;
       &--name {
         color: var(--color-grey-dark-1);
         font-size: 2rem;
+        margin-right: auto;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 26rem;
+        overflow: hidden;
+
         // background-color: saddlebrown;
       }
       &--rate {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        margin-right: 5px;
         // background-color: sandybrown;
+      }
+      &--icon {
+        font-size: 1.6rem;
+        // background-color: sienna;
+        color: var(--color-primary-light);
       }
     }
   }
