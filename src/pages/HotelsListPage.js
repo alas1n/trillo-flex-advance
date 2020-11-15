@@ -35,7 +35,7 @@ class HotelsListPage extends Component {
         hotels: response.data.data,
       };
     });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   componentDidMount() {

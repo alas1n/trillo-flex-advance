@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./sass/main.scss";
 import MainPage from "./pages/MainPage";
 import HotelsListPage from "./pages/HotelsListPage";
@@ -8,15 +13,15 @@ const Routes = () => {
     <div>
       <Router>
         <Switch>
-          <Route path="/mainpage">
+          <Route exact path="/mainpage">
             <MainPage />
           </Route>
-          <Route path="/hotelslist">
+          <Route exact path="/hotelslist">
             <HotelsListPage />
           </Route>
-          {/* <Route path="/">
-            <Home />
-          </Route> */}
+          <Route exact path="">
+            <Redirect exact from="/" to="hotelslist" />
+          </Route>
         </Switch>
       </Router>
     </div>
