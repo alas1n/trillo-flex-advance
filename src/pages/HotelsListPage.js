@@ -11,13 +11,16 @@ import LogoCmp from "./../components/LogoCmp";
 import SearchFiledCmp from "./../components/SearchFiledCmp";
 import UserNavigationCmp from "../components/UserNavigationCmp";
 import SidebarNavigationCmp from "../components/SidebarNavigationCmp";
-// import MapContainer from "../components/map";
 
 class HotelsListPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       hotels: [null],
+      pageNumber: 1,
+      page_size: 50,
+      num_of_pages: 100,
+      loaded: 0,
       center: {
         lat: 32.986166,
         lng: 50.413963,
@@ -27,15 +30,43 @@ class HotelsListPage extends Component {
   }
 
   getHotelData = async () => {
-    const response = await API.get("/hotels_list");
-    // const responsejosn = JSON.stringify(response);
-    // console.log(responsejosn);
+    console.log("geting data", this.state.pageNumber);
+    const response = await API.get("/hotels_list", {
+      params: {
+        page: this.state.pageNumber,
+        page_size: this.state.page_size,
+      },
+    });
+    // console.log(response);
     this.setState((state, props) => {
       return {
-        hotels: response.data.data,
+        hotels: [...state.hotels, ...response.data.data],
+        pageNumber: state.pageNumber + 1,
+        num_of_pages: response.data.num_of_pages,
       };
     });
-    // console.log(this.state);
+    console.log(this.state);
+  };
+
+  fetchNewData = async () => {
+    if (this.state.pageNumber < this.state.num_of_pages - 1) {
+      console.log("geting data", this.state.pageNumber);
+      const response = await API.get("/hotels_list", {
+        params: {
+          page: this.state.pageNumber,
+          page_size: this.state.page_size,
+        },
+      });
+      if (response.status === 200) {
+        this.setState((state, props) => {
+          return {
+            hotels: [...state.hotels, ...response.data.data],
+            pageNumber: state.pageNumber + 1,
+          };
+        });
+        console.log(this.state);
+      }
+    }
   };
 
   componentDidMount() {
@@ -58,15 +89,19 @@ class HotelsListPage extends Component {
             </div>
           </nav>
           <main className="hotels-list-view">
-            {this.state.hotels.map((hotel) => {
+            {this.state.hotels.map((hotel, i) => {
               const htl = { ...hotel };
+              if (i === 50) {
+                this.fetchNewData();
+              }
               return (
                 <HotelCmp
-                  key={String(htl.pk)}
+                  key={String(htl.name)}
                   hotelName={htl.name}
                   hotelRating={htl.rate}
                   hotelAdress={htl.addr}
                   img={htl.pics}
+                  num={i}
                 />
               );
             })}
