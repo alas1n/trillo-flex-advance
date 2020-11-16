@@ -7,6 +7,7 @@ import {
 import "./sass/main.scss";
 import MainPage from "./pages/MainPage";
 import HotelsListPage from "./pages/HotelsListPage";
+import Testpage from "./pages/test";
 
 const Routes = () => {
   return (
@@ -19,6 +20,9 @@ const Routes = () => {
           <Route exact path="/hotelslist">
             <HotelsListPage />
           </Route>
+          {/* <Route exact path="/testpage">
+            <Testpage />
+          </Route> */}
           <Route exact path="">
             <Redirect exact from="/" to="hotelslist" />
           </Route>
